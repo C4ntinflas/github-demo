@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Input from "./Components/Input";
+import Display from "./Components/Display";
 
 function App() {
+  const [user, setUser] = useState(null)
+
+  const display = user && <Display user={user} />
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Input setUser={setUser} />
+      {display}
     </div>
   );
 }
 
 export default App;
+// Components:
+// app - userData
+// input - username
+// dsiplay - userData (prop)
+
+//stateful varibales: 
+// user data
+// username
